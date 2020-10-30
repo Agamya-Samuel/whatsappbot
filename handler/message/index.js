@@ -20,7 +20,7 @@ const { menuId, menuEn } = require('./text') // Indonesian & English menu
 
 module.exports = msgHandler = async (client = new Client(), message) => {
     try {
-        const { type, id, from, sender, isGroupMsg, chat, caption, isMedia, mimetype, quotedMsg, quotedMsgObj, mentionedJidList } = message
+        const { type, id, from, t, sender, isGroupMsg, chat, caption, isMedia, mimetype, quotedMsg, quotedMsgObj, mentionedJidList } = message
         let { body } = message
         const { name, formattedTitle } = chat
         let { pushname, verifiedName, formattedName } = sender
