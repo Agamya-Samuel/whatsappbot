@@ -20,7 +20,7 @@ const { menuId, menuEn } = require('./text') // Indonesian & English menu
 
 module.exports = msgHandler = async (client = new Client(), message) => {
     try {
-        const { type, id, from, t, sender, isGroupMsg, chat, caption, isMedia, mimetype, quotedMsg, quotedMsgObj, mentionedJidList } = message
+        const { type, id, from, sender, isGroupMsg, chat, caption, isMedia, mimetype, quotedMsg, quotedMsgObj, mentionedJidList } = message
         let { body } = message
         const { name, formattedTitle } = chat
         let { pushname, verifiedName, formattedName } = sender
@@ -386,7 +386,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
               if (isGroupMsg) {
                   if (!isgPremiList) return client.reply(from, bot.error.onlyPremi, id)
                   if (args.length !== 1) return client.reply(from, bot.error.format, id)
-                  if (!isUrl(url) & !url.includes('twitter.com') || url.includes('t.co')) return client.reply(from, 'Maaf, url yang kamu kirim tidak valid. [Invalid Link]', id)
+                  if (!isUrl(url) && !url.includes('twitter.com') || url.includes('t.co')) return client.reply(from, 'Maaf, url yang kamu kirim tidak valid. [Invalid Link]', id)
                   await client.reply(from, `_Scraping Metadata..._ \n\n${menuId.textDonasi()}`, id)
                   downloader.tweet(url).then(async (data) => {
                       if (data.type === 'video') {
@@ -407,7 +407,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
               } else {
                   if (!isPmWhitelist) return client.reply(from, bot.error.onlyPremi, id)
                   if (args.length !== 1) return client.reply(from, bot.error.format, id)
-                  if (!isUrl(url) & !url.includes('twitter.com') || url.includes('t.co')) return client.reply(from, 'Maaf, url yang kamu kirim tidak valid. [Invalid Link]', id)
+                  if (!isUrl(url) && !url.includes('twitter.com') || url.includes('t.co')) return client.reply(from, 'Maaf, url yang kamu kirim tidak valid. [Invalid Link]', id)
                   await client.reply(from, `_Scraping Metadata..._ \n\n${menuId.textDonasi()}`, id)
                   downloader.tweet(url).then(async (data) => {
                       if (data.type === 'video') {
