@@ -1,6 +1,6 @@
 <div align="center">
  
-# KryPtoN Whatsapp Bot 
+# Zkyzzz WhatsApp Bot
 [![CodeFactor](https://www.codefactor.io/repository/github/kry9ton/krypton-whatsapp-bot/badge)](https://www.codefactor.io/repository/github/kry9ton/krypton-whatsapp-bot)
 [![DeepScan grade](https://deepscan.io/api/teams/11540/projects/14446/branches/269535/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=11540&pid=14446&bid=269535)
 [![Version](https://img.shields.io/badge/version%20K--wa%20Bot-v1.1.0-brightgreen)](https://github.com/Kry9toN/KryPtoN-WhatsApp-Bot/releases)
@@ -13,7 +13,7 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-[![Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Kry9toN/KryPtoN-WhatsApp-Bot/tree/master)
+[![Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/zkyzzz/zkyzzzwhatsappbot/tree/master)
 
 </div>
 
