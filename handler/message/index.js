@@ -115,6 +115,13 @@ module.exports = msgHandler = async (client = new Client(), message) => {
             await client.sendText(from, menuId.textMenu(pushname))
                 .then(() => ((isGroupMsg) && (isGroupAdmins)) ? client.sendText(from, 'Menu Admin Grup: *!menuadmin*') : null)
             break
+        case 'menuen':
+        case 'helpen':
+            if (isBlackList) return client.reply(from, bot.error.blackList, id)
+            await client.simulateTyping(from, true)
+            await client.sendText(from, menuEn.textMenu(pushname))
+                .then(() => ((isGroupMsg) && (isGroupAdmins)) ? client.sendText(from, 'Menu Admin Grup: *!menuadmin*') : null)
+            break
         case 'update':
         case 'channel':
             await client.simulateTyping(from, true)
@@ -132,11 +139,6 @@ module.exports = msgHandler = async (client = new Client(), message) => {
             if (!isPmWhitelist) return client.reply(from, bot.error.onlyPremi, id)
             await client.simulateTyping(from, true)
             await client.sendText(from, menuId.textPremi(pushname))
-            break
-        case 'donate':
-        case 'donasi':
-            await client.simulateTyping(from, true)
-            await client.sendText(from, menuId.textDonasi())
             break
         // Sticker Creator
         case 'sticker':
@@ -831,7 +833,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
               const value = [`${orang}`]
               database.query(sql, value)
                 .then((res) => {
-                  client.removeParticipant(groupId, orang)
+                  if (groupMembers.includes(orang)) return client.removeParticipant(groupId, orang)
                   client.sendTextWithMentions(from, `@${uid} telah di *gban*`)
                   console.log(res)
                 }).catch((err) => {
